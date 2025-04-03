@@ -16,26 +16,6 @@ function getComputerChoice() {
     }          
 }
 
-console.log(getComputerChoice());
-// Step 3: Write the logic to get the human choice
-// Your game will be played by a human player. You will write a function that takes the user choice and returns it.
-
-
-// Create a new function named getHumanChoice.
-// Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
-// Hint: Use the prompt method to get the user’s input.
-// You do not need to handle reprompting if the user enters an invalid input, as that would require things we will teach later. For now, just assume the user will always enter a valid choice.
-// Test what your function returns by using console.log.
-
-// DECLARE function for the user's choice
-    // INIT a variable to store the user's choice
-    // SEQUENCE prompt user for input and store in the userchoice variable
-    // SEQUENCE check if the user's choice is valid
-        // IF the choice is rock, paper, or scissors
-            // RETURN the user's choice
-        // IF the choice is not rock, paper, or scissors
-            // RETURN "User is a moron and picked something stupid"
-
 function getHumanChoice() {
     let humanChoice = prompt("Enter Rock, Paper, or Scissors");
     console.log("User Chose:");
@@ -47,6 +27,7 @@ function getHumanChoice() {
 }
 
 console.log(getHumanChoice());
+console.log(getComputerChoice());
 
 // Step 4: Declare the players score variables
 // Your game will keep track of the players score. You will write variables to keep track of the players score.
