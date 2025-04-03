@@ -1,18 +1,3 @@
-// Step 2: Write the logic to get the computer choice
-// Your game will be played against the computer. You will write a function that randomly returns “rock”, “paper” or “scissors”.
-
-// Create a new function named getComputerChoice.
-// Write the code so that getComputerChoice will randomly return one of the following string values: “rock”, “paper” or “scissors”.
-// Hint: The Math.random method returns a random number that’s greater than or equal to 0 and less than 1. Think about how you can use this to conditionally return one of the multiple choices.
-// Note: Some learners might think that arrays are necessary for this problem, but they aren’t. If you’re unfamiliar with arrays, don’t worry - they’ll be covered later in the curriculum.
-// Test that your function returns what you expect using console.log or the browser developer tools before advancing to the next step.
-// Step 3: Write the logic to get the human choice
-// Your game will be played by a human player. You will write a function that takes the user choice and returns it.
-
-// When the game starts the computer will generate a random number between 0 and 3 and return it
-// CASE random number was 0 THEN return Rock
-// CASE random number was 1 THEN return Paper
-// CASE random number was 2 THEN return Scissors
 let computerChoice = getComputerChoice();
 
 function getComputerChoice() {
@@ -33,11 +18,22 @@ function getComputerChoice() {
     }
             
 }
+// Step 3: Write the logic to get the human choice
+// Your game will be played by a human player. You will write a function that takes the user choice and returns it.
+
+
 // Create a new function named getHumanChoice.
 // Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
 // Hint: Use the prompt method to get the user’s input.
 // You do not need to handle reprompting if the user enters an invalid input, as that would require things we will teach later. For now, just assume the user will always enter a valid choice.
 // Test what your function returns by using console.log.
+
+// DECLARE function for the user's choice
+//  INIT a variable to store the user's choice
+//  SEQUENCE prompt user for input and store in the userchoice variable
+//  RETURN the users choice
+
+
 // Step 4: Declare the players score variables
 // Your game will keep track of the players score. You will write variables to keep track of the players score.
 
