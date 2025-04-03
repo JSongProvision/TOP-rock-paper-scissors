@@ -1,8 +1,6 @@
-let computerChoice = getComputerChoice();
-
 function getComputerChoice() {
     random = Math.floor(Math.random() * 3);
-    
+    console.log("Computer Chose:");
     switch (random) {
         case 0:
             return "Rock";
@@ -15,9 +13,10 @@ function getComputerChoice() {
                 break;
         default:
             return "Shit, we really messed something up here.";
-    }
-            
+    }          
 }
+
+console.log(getComputerChoice());
 // Step 3: Write the logic to get the human choice
 // Your game will be played by a human player. You will write a function that takes the user choice and returns it.
 
@@ -29,10 +28,25 @@ function getComputerChoice() {
 // Test what your function returns by using console.log.
 
 // DECLARE function for the user's choice
-//  INIT a variable to store the user's choice
-//  SEQUENCE prompt user for input and store in the userchoice variable
-//  RETURN the users choice
+    // INIT a variable to store the user's choice
+    // SEQUENCE prompt user for input and store in the userchoice variable
+    // SEQUENCE check if the user's choice is valid
+        // IF the choice is rock, paper, or scissors
+            // RETURN the user's choice
+        // IF the choice is not rock, paper, or scissors
+            // RETURN "User is a moron and picked something stupid"
 
+function getHumanChoice() {
+    let humanChoice = prompt("Enter Rock, Paper, or Scissors");
+    console.log("User Chose:");
+    if (humanChoice === "Rock" || humanChoice === "Paper" || humanChoice === "Scissors") {
+        return humanChoice;
+    } else {
+        return "User Screwed Up";
+    }
+}
+
+console.log(getHumanChoice());
 
 // Step 4: Declare the players score variables
 // Your game will keep track of the players score. You will write variables to keep track of the players score.
