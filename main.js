@@ -1,8 +1,18 @@
 const choices = document.querySelector("#choices");
+const resultsDisplay = document.querySelector ("#results");
+const scoreDisplay = document.querySelector("#score");
+const welcomeMsg = document.querySelector ("#welcome-msg");
+const scoreBox = document.querySelector ("#scoreBox");
+
+let computerScore = 0;
+let playerScore = 0;
+let round = 1;
 
 choices.addEventListener('click', (event) => {
     const target = event.target;
     let playerChoice = 'Never Set';
+
+    welcomeMsg.remove();
 
     switch (target.id) {
         case 'rock-btn':
@@ -18,13 +28,30 @@ choices.addEventListener('click', (event) => {
             playerChoice = "User Screwed Up";
     }
 
-    playRound(playerChoice);
+    if (round <=5) {
+        playRound(playerChoice);
+        round++;
+    }    
 });
 
+if (round = 5) {
+        const gameOver = document.createElement("p")
+        gameOver.setAttribute('id','gameOver');
+        gameOver.textContent = `==[GAME OVER]==
+            FINAL SCORE - Computer: ${computerScore} Player: ${playerScore}`;
+        scoreBox.appendChild
+        choices.remove();
+    }    
+
+    
+
+
+
+
+    // playRound(playerChoice);
+
 // global variables
-let computerScore = 0;
-let playerScore = 0;
-let round = 1;
+
 
 //generate random computer choice
 function getComputerChoice() {
@@ -58,43 +85,33 @@ function getHumanChoice() {
 function determineWinner (computerPick,playerPick) {
     
     if (computerPick === playerPick) {
-            alert( `Tie! You both picked ${computerPick}`);
+            // alert( `Tie! You both picked ${computerPick}`);
             return `Tie! You both picked ${computerPick}`;
     }   else if (computerPick === "Rock" && playerPick === "Scissors" || computerPick === "Paper" && playerPick === "Rock" || computerPick === "Scissors" && playerPick == "Paper") {
             computerScore++;
-            alert( `You are a giant loser! ${computerPick} beats ${playerPick}.`);
+            // alert( `You are a giant loser! ${computerPick} beats ${playerPick}.`);
             return `You are a giant loser! ${computerPick} beats ${playerPick}.`;
     }   else if (playerPick === "Rock" && computerPick === "Scissors" || playerPick === "Paper" && computerPick === "Rock" || playerPick === "Scissors" && computerPick == "Paper") {
             playerScore++;
-            alert( `Congrats, you won! ${playerPick} beats ${computerPick}. I bet your dad is proud of you ... wherever he is... `);
+            // alert( `Congrats, you won! ${playerPick} beats ${computerPick}. I bet your dad is proud of you ... wherever he is... `);
             return `Congrats, you won! ${playerPick} beats ${computerPick}. I bet your dad is proud of you ... wherever he is... `;
     }   else {
-            alert("Something has gone horribly wrong and the game is rigged!");
+            // alert("Something has gone horribly wrong and the game is rigged!");
             return "Something has gone horribly wrong and the game is rigged!";
     }
 }
 
-// start a round of the game invoking determine winner function and logging results of the round and the current score standinds to user
+// start a round of the game invoking determine winner function and logging results of the round and the current score standings to user
 function playRound (playerChoice) {
-    console.log(determineWinner( getComputerChoice() , playerChoice ));
-    alert(`The computer's score is : ${computerScore} and your score is: ${playerScore}`);
-    console.log (`The computer's score is : ${computerScore} and your score is: ${playerScore}`);
+
+    resultsDisplay.textContent = determineWinner( getComputerChoice() , playerChoice );
+    scoreDisplay.textContent = `The computer's score is : ${computerScore} and your score is: ${playerScore}`;
 }
 
-function playGame () {
-    
-    // for (i=1; i <= 5; i++ ) {
-        alert(`ROUND ${round}: FIGHT!`);
-        console.log(`==ROUND ${round} RESULTS==`);
-        playRound();
-        round++;
-    // }
-
-}
+// function playGame () {}
 
 // playGame();
-// alert(`==[GAME OVER]==
-//         FINAL SCORE - Computer: ${computerScore} Player: ${playerScore}`);
+
 // console.log(`==[GAME OVER]==
 //         FINAL SCORE - Computer: ${computerScore} Player: ${playerScore}`);
 // if (computerScore > playerScore) {
