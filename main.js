@@ -2,7 +2,7 @@ const choices = document.querySelector("#choices");
 const resultsDisplay = document.querySelector ("#results");
 const scoreDisplay = document.querySelector("#score");
 const welcomeMsg = document.querySelector ("#welcome-msg");
-const scoreBox = document.querySelector ("#scoreBox");
+const scoreBox = document.querySelector ("#score-box");
 
 let computerScore = 0;
 let playerScore = 0;
@@ -31,26 +31,13 @@ choices.addEventListener('click', (event) => {
     if (round <=5) {
         playRound(playerChoice);
         round++;
-    }    
-});
-
-if (round = 5) {
-        const gameOver = document.createElement("p")
-        gameOver.setAttribute('id','gameOver');
-        gameOver.textContent = `==[GAME OVER]==
+    }
+    if (round > 5) {
+        score.textContent = `==[GAME OVER]==
             FINAL SCORE - Computer: ${computerScore} Player: ${playerScore}`;
-        scoreBox.appendChild
         choices.remove();
-    }    
-
-    
-
-
-
-
-    // playRound(playerChoice);
-
-// global variables
+    }        
+});
 
 
 //generate random computer choice
@@ -69,16 +56,6 @@ function getComputerChoice() {
         default:
             return "Shit, we really messed something up here.";
     }          
-}
-
-// prompt player for input and validate input is rock,paper, or scissors
-function getHumanChoice() {
-    let humanChoice = prompt("Enter Rock, Paper, or Scissors");
-    if (humanChoice === "Rock" || humanChoice === "Paper" || humanChoice === "Scissors") {
-        return humanChoice;
-    } else {
-        return "User Screwed Up";
-    }
 }
 
 // pass getComputerChoice and getHumanChoice as parameters to determine a winner in a given round
