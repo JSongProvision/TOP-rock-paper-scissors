@@ -1,8 +1,8 @@
 const choices = document.querySelector("#choices");
-const resultsDisplay = document.querySelector ("#results");
+const resultsDisplay = document.querySelector("#results");
 const scoreDisplay = document.querySelector("#score");
-const welcomeMsg = document.querySelector ("#welcome-msg");
-const scoreBox = document.querySelector ("#score-box");
+const welcomeMsg = document.querySelector("#welcome-msg");
+const scoreBox = document.querySelector("#score-box");
 
 let computerScore = 0;
 let playerScore = 0;
@@ -25,24 +25,31 @@ choices.addEventListener('click', (event) => {
         case 'scissors-btn':
             playerChoice = "Scissors";
             break;
+        case 'reset-btn':
+            playerChoice = "Reset Clicked";
+            reset();
+
         default:
             playerChoice = "User Screwed Up";
     }
 
-    if (round <=5) {
-        playRound(playerChoice);
-        round++;
-    }
+   
+    playRound(playerChoice);
+
     if (round > 5) {
-        score.textContent = `==[GAME OVER]==
+        scoreDisplay.textContent = `==[GAME OVER]==
             FINAL SCORE - Computer: ${computerScore} Player: ${playerScore}`;
-        choices.remove();
+        
+        const resetBtn = document.createElement("button");
+        resetBtn.setAttribute("id","reset-btn");
+        resetBtn.textContent = "Play Again";
+        choices.replaceChildren(resetBtn);
     }        
 });
 
 //generate random computer choice
 function getComputerChoice() {
-    random = Math.floor(Math.random() * 3);
+    const random = Math.floor(Math.random() * 3);
     switch (random) {
         case 0:
             return "Rock";
@@ -76,7 +83,18 @@ function determineWinner (computerPick,playerPick) {
 
 // start a round of the game 
 function playRound (playerChoice) {
+    if (round <=5) {
+        resultsDisplay.textContent = determineWinner( getComputerChoice() , playerChoice );
+        scoreDisplay.textContent = `The computer's score is : ${computerScore} and your score is: ${playerScore}`;
+        round++;
+    }
+}
 
-    resultsDisplay.textContent = determineWinner( getComputerChoice() , playerChoice );
-    scoreDisplay.textContent = `The computer's score is : ${computerScore} and your score is: ${playerScore}`;
+function reset () {
+    body = document.body;
+    body.insertBefore(welcomeMsg,body.firstchild);
+    body.insertBefore(choices,welcomeMsg.nextSibling);
+    
+    resultsDisplay.textContent = '';
+    scoreDisplay.textContent = '';
 }
