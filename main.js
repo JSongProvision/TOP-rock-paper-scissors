@@ -28,7 +28,7 @@ choices.addEventListener('click', (event) => {
         case 'reset-btn':
             playerChoice = "Reset Clicked";
             reset();
-
+            break;
         default:
             playerChoice = "User Screwed Up";
     }
@@ -70,10 +70,10 @@ function determineWinner (computerPick,playerPick) {
     
     if (computerPick === playerPick) {
             return `Tie! You both picked ${computerPick}`;
-    }   else if (computerPick === "Rock" && playerPick === "Scissors" || computerPick === "Paper" && playerPick === "Rock" || computerPick === "Scissors" && playerPick == "Paper") {
+    }   else if (computerPick === "Rock" && playerPick === "Scissors" || computerPick === "Paper" && playerPick === "Rock" || computerPick === "Scissors" && playerPick === "Paper") {
             computerScore++;
             return `You are a giant loser! ${computerPick} beats ${playerPick}.`;
-    }   else if (playerPick === "Rock" && computerPick === "Scissors" || playerPick === "Paper" && computerPick === "Rock" || playerPick === "Scissors" && computerPick == "Paper") {
+    }   else if (playerPick === "Rock" && computerPick === "Scissors" || playerPick === "Paper" && computerPick === "Rock" || playerPick === "Scissors" && computerPick === "Paper") {
             playerScore++;
             return `Congrats, you won! ${playerPick} beats ${computerPick}. I bet your dad is proud of you ... wherever he is... `;
     }   else {
@@ -83,7 +83,7 @@ function determineWinner (computerPick,playerPick) {
 
 // start a round of the game 
 function playRound (playerChoice) {
-    if (round <=5) {
+    if (round <= 5 && playerChoice !== "Reset Clicked") {
         resultsDisplay.textContent = determineWinner( getComputerChoice() , playerChoice );
         scoreDisplay.textContent = `The computer's score is : ${computerScore} and your score is: ${playerScore}`;
         round++;
@@ -97,4 +97,7 @@ function reset () {
     
     resultsDisplay.textContent = '';
     scoreDisplay.textContent = '';
+    round = 1;
+    computerScore = 0;
+    playerScore = 0;
 }
