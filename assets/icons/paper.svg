@@ -1,0 +1,7 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <title>Paper</title>
+  <g stroke="none" stroke-width="1" fill-rule="evenodd">
+    <path d="M20,10 L65,10 L85,30 L85,90 L20,90 L20,10 Z" fill="#A9CCE3"/>
+    <path d="M65,10 L85,30 L65,30 L65,10 Z" fill="#85B2D1"/>
+  </g>
+</svg>
