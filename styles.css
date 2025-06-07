@@ -1,0 +1,44 @@
+:root {
+    --primary:#2e0f38;
+    --secondary:#4d7b93;
+    --accent:#1a2c54;
+    --accent2: #8351a8;
+}
+
+body {
+    background-image: url('assets/images/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    font-family: "Raleway", sans-serif;
+    color:#fffcff;
+
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 200;    
+}
+
+.card {
+    background-color: #2e0f381A;
+    padding: 20px;
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
+    border: 2px solid #ffffff33;
+    box-shadow: 0 0 80px #00000054;
+
+
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+    margin:0;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+}

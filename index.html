@@ -4,32 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors Game</title>
-
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body style="background-image: url('assets/images/background.svg'); background-repeat: no-repeat;
-background-size: cover;
-background-position: center;
-">
+<body>
+    <div class="container">
     
-    <h1>ROCK, PAPER, SCISSORS</h1>
-    <p id="welcome-msg">Welcome to the game of games!</p>
-    
-    <div id="score-box">
-        <p id="results"></p>
-        <p id="score"></p>
+        <h1 class="card">ROCK | PAPER | SCISSORS</h1>
+        <p id="welcome-msg">Welcome to the game of games!</p>
+        <p id="rules">Rules: Rock beats scissors. Scissors beats paper. Paper beats rock.</p>
+        
+        <div id="score-box">
+            <p id="results"></p>
+            <p id="score"></p>
+        </div>
+        
+        
+        <ul id="choices">
+            <button id="rock-btn">Rock</button>
+            <button id="paper-btn">Paper</button>
+            <button id="scissors-btn">Scissors</button>
+        </ul>
+        
+
+        <!-- <img src="assets/icons/paper.svg" alt="icon representing paper">
+        <img src="assets/icons/rock.svg" alt="icon representing rock">
+        <img src="assets/icons/scissors.svg" alt="icon representing scissors"> -->
     </div>
     
     
-    <ul id="choices">
-        <button id="rock-btn">Rock</button>
-        <button id="paper-btn">Paper</button>
-        <button id="scissors-btn">Scissors</button>
-    </ul>
-   <p id="rules">Rules: Rock beats scissors. Scissors beats paper. Paper beats rock.</p>
-
-   <img src="assets/icons/paper.svg" alt="icon representing paper">
-   <img src="assets/icons/rock.svg" alt="icon representing rock">
-   <img src="assets/icons/scissors.svg" alt="icon representing scissors">
 
 
     <script src="main.js"></script>
