@@ -3,6 +3,7 @@ const resultsDisplay = document.querySelector("#results");
 const scoreDisplay = document.querySelector("#score");
 const welcomeMsg = document.querySelector("#welcome-msg");
 const scoreBox = document.querySelector("#score-box");
+const rules = document.querySelectorAll (".rules");
 
 let computerScore = 0;
 let playerScore = 0;
@@ -14,6 +15,10 @@ choices.addEventListener('click', (event) => {
     let playerChoice = 'Never Set';
 
     welcomeMsg.remove();
+    rules.forEach(element => {
+        element.remove();
+    });
+    
 
     switch (target.id) {
         case 'rock-btn':

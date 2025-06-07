@@ -36,8 +36,6 @@ span.rules {
     border: 2px solid #ffffff33;
     box-shadow: 0 0 80px #00000054;
     width: 80vw;
-
-
 }
 
 .container {
@@ -69,4 +67,52 @@ p.rules {
     text-align: center;
     font-weight:bold;
     font-size: 1.5rem;
+}
+
+#choices {
+    display:flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+#rock-btn {
+    height:200px;
+    width:200px;
+    background-image: url('assets/icons/rock.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px;
+
+}
+
+#paper-btn {
+    height:200px;
+    width:200px;
+    background-image: url('assets/icons/paper.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px;
+}
+
+#scissors-btn {
+    height:200px;
+    width:200px;
+    background-image: url('assets/icons/scissors.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150px;
+}
+
+.button { background-color: #2e0f384D;
+    padding: 20px;
+    backdrop-filter: blur(80px);
+    border-radius: 20px;
+    border: 2px solid #ffffff33;
+    box-shadow: 0 0 80px #ffffff54;
+    width: 80vw;
+}
+
+.button:hover{
+    border-color:#87cefa;
+    box-shadow: 0 0 80px #87cefa54;
 }
