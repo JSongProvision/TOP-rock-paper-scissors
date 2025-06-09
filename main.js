@@ -1,3 +1,4 @@
+const contents = document.querySelector(".contents");
 const choices = document.querySelector("#choices");
 const resultsDisplay = document.querySelector("#results");
 const scoreDisplay = document.querySelector("#score");
@@ -30,10 +31,6 @@ choices.addEventListener('click', (event) => {
         case 'scissors-btn':
             playerChoice = "Scissors";
             break;
-        case 'reset-btn':
-            playerChoice = "Reset Clicked";
-            reset();
-            break;
         default:
             playerChoice = "User Screwed Up";
     }
@@ -42,13 +39,7 @@ choices.addEventListener('click', (event) => {
     playRound(playerChoice);
 
     if (round > 5) {
-        scoreDisplay.textContent = `==[GAME OVER]==
-            FINAL SCORE - Computer: ${computerScore} Player: ${playerScore}`;
-        
-        const resetBtn = document.createElement("button");
-        resetBtn.setAttribute("id","reset-btn");
-        resetBtn.textContent = "Play Again";
-        choices.replaceChildren(resetBtn);
+       gameOver();
     }        
 });
 
@@ -95,14 +86,40 @@ function playRound (playerChoice) {
     }
 }
 
+function gameOver () {
+    scoreDisplay.setAttribute("id","gameOver");
+    scoreDisplay.textContent = "==[GAME OVER]==";
+
+    const finalScore = document.createElement("p");
+    finalScore.id = "finalScore";
+    finalScore.textContent = `FINAL SCORE: Computer: ${computerScore} Player: ${playerScore}`;
+    scoreBox.appendChild(finalScore);
+   
+    const resetBtn = document.createElement("button");
+    resetBtn.setAttribute("id","reset-btn");
+    resetBtn.textContent = "Play Again";
+    choices.remove();
+    contents.appendChild(resetBtn);
+    resetBtn.addEventListener("click", (event) => {
+        resetBtn.remove();
+        reset();
+    });
+
 function reset () {
-    body = document.body;
-    body.insertBefore(welcomeMsg,body.firstchild);
-    body.insertBefore(choices,welcomeMsg.nextSibling);
+    contents.appendChild(welcomeMsg);
+    rules.forEach(element => {
+        contents.appendChild(element);
+    });
+    contents.appendChild(choices);
     
     resultsDisplay.textContent = '';
     scoreDisplay.textContent = '';
+    scoreDisplay.id = "score-box";
+    finalScore.remove();
+
     round = 1;
     computerScore = 0;
     playerScore = 0;
+}
+
 }

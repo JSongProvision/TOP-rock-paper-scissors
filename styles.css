@@ -12,6 +12,8 @@ body {
     background-position: center;
 
     font-family: "Raleway", sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
     color:#fffcff;
 
     margin: 0;
@@ -115,4 +117,45 @@ p.rules {
 .button:hover{
     border-color:#87cefa;
     box-shadow: 0 0 80px #87cefa54;
+}
+
+.button:active{
+    border-color:#87cefa;
+    box-shadow: 0 0 80px #87cefa54;
+    background-color: #2e0f38CC;
+}
+
+#gameOver {
+    font-family: "Alumni Sans SC", sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--secondary);
+    font-weight: bold;
+}
+
+#finalScore {
+    font-family: "Alumni Sans SC", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#reset-btn {
+    font-family: "Alumni Sans SC", sans-serif;
+    font-size: 2.5rem;
+    border-radius: 10px;
+    background-color: var(--accent2);
+    border: 2px solid #ffffff33;
+    border-style:solid;
+    color: #fffcff;
+}
+
+#reset-btn:hover{
+    border-color:#87cefa;
+    box-shadow: 0 0 80px #87cefa54;
+}
+
+#reset-btn:active{
+    border-color:#87cefa;
+    box-shadow: 0 0 80px #87cefa54;
+    background-color: #2e0f38CC;
 }
